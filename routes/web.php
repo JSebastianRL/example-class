@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/{parametro}', function ($parametro = null) {
+//     if ($parametro == null) return "hola";
+
+//     return "hola {$parametro}";
+// });
+
+Route :: get ('/', [ App\Http\Controllers\HomeController  :: class, 'index']);
+
+Route :: group(['prefix'=> 'Person'], function(){
+    Route :: post('/store', [App\Http\Controllers\PersonController  :: class, 'store']);
+    Route :: get('/delete/{id}', [App\Http\Controllers\PersonController  :: class, 'delete']);
+    Route :: get('/edit/{id}', [App\Http\Controllers\PersonController  :: class, 'edit']);
+    Route :: put('/update{id}', [App\Http\Controllers\PersonController  :: class, 'update']);
+
+
 });
