@@ -20,16 +20,20 @@ class PersonController extends Controller
         $person -> delete();
         return back();
     }
-    public function edit(Person $person){
+    public function edit($id){
+        $person = Person::find($id);
         return view('edit',compact('person'));
     }
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {   
         $person = Person::find($id);
-        $data = $request -> only('name','surname','age','phone','email');
-        $person= $request->all();
-        $person->update($data);
-
-        return redirection()->back();
-    }
+        $person = new Person($request->all());
+        // $person->name=$request->input('name');
+        // $person->surname=$request->input('surname');
+        // $person->age=$request->input('age');
+        // $person->phone=$request->input('phone');
+        // $person->email=$request->input('email');
+        $person->save();
+        return view('welcome', compact('person'));
+}
 }

@@ -25,7 +25,7 @@ Route :: group(['prefix'=> 'Person'], function(){
     Route :: post('/store', [App\Http\Controllers\PersonController  :: class, 'store']);
     Route :: get('/delete/{id}', [App\Http\Controllers\PersonController  :: class, 'delete']);
     Route :: get('/edit/{id}', [App\Http\Controllers\PersonController  :: class, 'edit']);
-    Route :: put('/update{id}', [App\Http\Controllers\PersonController  :: class, 'update']);
+    Route :: put('/update', [App\Http\Controllers\PersonController  :: class, 'update']);
 
 
 });

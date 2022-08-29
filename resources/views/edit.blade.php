@@ -9,29 +9,29 @@
 <body>
 	<section>
 		<h1>Edit person</h1>
-		<form action="/Person/update" method="post">
+		<form  method="post" action="/Person/update/{{$person->id}}">
 			@csrf 
             @method('PUT')
 			<label>	
 				Name
 			</label>
-			<input type="text" name="name" > <br>
+			<input type="text" name="name" value="{{$person->name}}"> <br>
 			<label>	
 				Surname
 			</label>
-			<input type="text" name="surname" > <br>
+			<input type="text" name="surname" value="{{$person->surname}}"> <br>
 			<label>	
 				Age
 			</label>
-			<input type="number" name="age" > <br>
+			<input type="number" name="age"value="{{$person->age}}" > <br>
 			<label>	
 				Phone
 			</label>
-			<input type="tel" name="phone" > <br>
+			<input type="tel" name="phone" value="{{$person->phone}}"> <br>
 			<label>	
 				Email
 			</label>    
-			<input type="email" name="email" > <br>
+			<input type="email" name="email" value="{{$person->email}}"> <br>
 			<button type="submit">save</button>
 		</form>
 

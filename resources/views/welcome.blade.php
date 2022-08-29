@@ -56,7 +56,7 @@
 						<td>{{ $person->phone }}</td>
 						<td>{{ $person->email }}</td>
 						<td>
-							<a href="Person/edit/{{$person->id }}">Edit</a>
+							<a href="Person/edit/{{ $person->id }}">Edit</a>
 							<a href="Person/delete/{{$person->id}}">Delete</a>
 							
 						</td>
